@@ -1,0 +1,36 @@
+<!-- 
+<table>
+    <thead>
+        <tr> <h1>{{ pageHeader }}</h1></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>First Name</td>
+            <td>{{firstName}}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>{{lastName}}</td>
+        </tr>
+        <tr *ngIf="isShow">
+            <td>Gender</td>
+            <td>{{gender}}</td>
+        </tr>
+        <tr  *ngIf="isShow">
+            <td>Age</td>
+            <td>{{age}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)='onClick()'>
+    {{ isShow ? 'Hide' : 'Show'}} Details
+</button>
+ -->
+
+ <div>
+     Show:
+     <input type="radio" name="opt" value="All" [(ngModel)]="selectedRadioBtnValue" (change)="onRadioBtnSelectionChange()"> All
+     <input type="radio" name="opt" value="Male" [(ngModel)]="selectedRadioBtnValue" (change)="onRadioBtnSelectionChange()"> Male
+     <input type="radio" name="opt" value="Female" [(ngModel)]="selectedRadioBtnValue" (change)="onRadioBtnSelectionChange()"> Female
+ </div>

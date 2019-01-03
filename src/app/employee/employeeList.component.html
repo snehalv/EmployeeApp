@@ -1,0 +1,37 @@
+<my-employee [all]="getAllEmployees()" 
+             [male]="getMaleEmplyees()"
+             [female]="getFemaleEmployees()"
+             (radioBtnSelectionChangeEvent)="onEmployeeCountRadioButtonChange($event)"></my-employee> <br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Annual Salary</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let employee of employees;">
+        <tr *ngIf="selectedEmployeeCountRadioButton=='All' ||
+                               selectedEmployeeCountRadioButton==employee.gender">
+         <td>{{employee.id}}</td>
+            <td>{{employee.name | uppercase}}</td>
+            <td>{{employee.gender | lowercase}}</td>
+            <td>{{employee.salary}}</td>
+           
+           
+        </tr>
+    </ng-container>
+        <tr *ngIf="!employees || employees.length==0">
+            <td colspan="5">
+                No employees to display
+            </td>
+        </tr>
+           
+    </tbody>
+</table>
+<br />
+ <button (click)='getEmployee()'>Refresh Employees</button> 
